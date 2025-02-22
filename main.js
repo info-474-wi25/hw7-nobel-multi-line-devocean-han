@@ -80,7 +80,9 @@ d3.csv("nobel_laureates.csv").then(data => {
     // 4.c: Define colorScale using d3.scaleOrdinal with categories as the domain
     const colorScale = d3.scaleOrdinal()
         .domain(Array.from(categories.keys()))
-        .range(d3.schemeCategory10);
+        // .range(d3.schemeCategory10);
+        // .range(d3.schemeTableau10);
+        .range(d3.schemeSet2);
     // 4.d: Line generator
     const line = d3.line()
         .x(d => xScale(d.year))
@@ -178,9 +180,10 @@ d3.csv("nobel_laureates.csv").then(data => {
     // - Append <text> elements to the legend groups.
     // - Position and align the text beside each color square.
     legend.append("text")
+        .attr("class", "legend")
         .text(d => d[0]) // Use category name as text
         .attr("x", 30)
         .attr("y", 10)
-        // .attr("text-anchor", "start")
+        .attr("text-anchor", "start")
         // .style("alignment-baseline", "middle");
 });

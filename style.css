@@ -10,6 +10,12 @@
 .axis-label {
     font-family: 'Arial', sans-serif; /* Same font as the title */
     font-size: 12px; /* Smaller font size for axis labels */
+    font-weight: bold;
     fill: #666; /* A lighter gray for axis labels */
     text-anchor: middle; /* Center the text */
+}
+
+.legend {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
 }
